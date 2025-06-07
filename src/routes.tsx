@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import { AppLayout } from '@/pages/_layouts/app.layout'
-import { PatientNotes } from '@/pages/patient-notes/patient-notes'
-import { PatientsList } from '@/pages/patients-list/patients-list'
+import { NoteDetails } from '@/pages/note-details/note-details'
+import { NotesList } from '@/pages/notes-list/notes-list'
 
 export const router = createBrowserRouter([
   {
@@ -11,11 +11,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <PatientsList />,
+        element: <NotesList />,
       },
       {
-        path: '/patient/:patientId',
-        element: <PatientNotes />,
+        path: '/note/:noteId',
+        element: <NoteDetails />,
       },
     ],
   },

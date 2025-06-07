@@ -5,7 +5,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardFooter,
   Label,
   Select,
   SelectContent,
@@ -15,7 +14,7 @@ import {
   Textarea,
 } from '@/components'
 
-export function PatientNotes() {
+export function NoteDetails() {
   const navigate = useNavigate()
 
   const [transcription, setTranscription] = useState(
@@ -29,7 +28,30 @@ export function PatientNotes() {
   return (
     <div className="my-2 flex w-full max-w-4xl flex-col gap-4">
       <Card>
-        <CardContent>
+        <CardContent className="flex gap-4">
+          <Card className="h-fit w-1/2">
+            <CardContent>
+              <div className="flex flex-col gap-4">
+                <h1 className="text-2xl font-bold">Patient Information</h1>
+
+                <div className="flex flex-col gap-2">
+                  <p className="text-lg font-bold">Fullname</p>
+                  <p>John Doe</p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <p className="text-lg font-bold">Date of birth</p>
+                  <p>01/01/1990</p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <p className="text-lg font-bold">Identification Number</p>
+                  <p>1234567890</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <h1 className="text-2xl font-bold">Note for John Doe</h1>
@@ -58,6 +80,11 @@ export function PatientNotes() {
               <Label htmlFor="m1800" className="text-lg">
                 M1800. Grooming
               </Label>
+              <p className="text-muted-foreground text-sm">
+                Current ability to tend safely to personal hygiene needs
+                (specifically: washing face and hands, hair care, shaving or
+                make up, teeth or denture care, or fingernail care).
+              </p>
               <Select>
                 <SelectTrigger className="w-full" id="m1800">
                   <SelectValue placeholder="Select an option" />
@@ -84,6 +111,11 @@ export function PatientNotes() {
               <Label htmlFor="m1810" className="text-lg">
                 M1810. Current Ability to Dress Upper Body
               </Label>
+              <p className="text-muted-foreground text-sm">
+                Current Ability to Dress Upper Body safely (with or without
+                dressing aids) including undergarments, pullovers, front-opening
+                shirts and blouses, managing zippers, buttons, and snaps.
+              </p>
               <Select>
                 <SelectTrigger className="w-full" id="m1810">
                   <SelectValue placeholder="Select an option" />
@@ -110,6 +142,11 @@ export function PatientNotes() {
               <Label htmlFor="m1820" className="text-lg">
                 M1820. Current Ability to Dress Lower Body
               </Label>
+              <p className="text-muted-foreground text-sm">
+                Current Ability to Dress Lower Body safely (with or without
+                dressing aids) including undergarments, slacks, socks or nylons,
+                shoes.
+              </p>
               <Select>
                 <SelectTrigger className="w-full" id="m1820">
                   <SelectValue placeholder="Select an option" />
@@ -137,6 +174,10 @@ export function PatientNotes() {
               <Label htmlFor="m1830" className="text-lg">
                 M1830. Bathing
               </Label>
+              <p className="text-muted-foreground text-sm">
+                Current ability to wash entire body safely. Excludes grooming
+                (washing face, washing hands, and shampooing hair).
+              </p>
               <Select>
                 <SelectTrigger className="w-full" id="m1830">
                   <SelectValue placeholder="Select an option" />
@@ -184,6 +225,10 @@ export function PatientNotes() {
               <Label htmlFor="m1840" className="text-lg">
                 M1840. Toilet Transferring
               </Label>
+              <p className="text-muted-foreground text-sm">
+                Current ability to get to and from the toilet or bedside commode
+                safely and transfer on and off toilet/commode.
+              </p>
               <Select>
                 <SelectTrigger className="w-full" id="m1840">
                   <SelectValue placeholder="Select an option" />
@@ -214,6 +259,10 @@ export function PatientNotes() {
               <Label htmlFor="m1850" className="text-lg">
                 M1850. Transferring
               </Label>
+              <p className="text-muted-foreground text-sm">
+                Current ability to move safely from bed to chair, or ability to
+                turn and position self in bed if patient is bedfast.
+              </p>
               <Select>
                 <SelectTrigger className="w-full" id="m1850">
                   <SelectValue placeholder="Select an option" />
@@ -248,6 +297,11 @@ export function PatientNotes() {
               <Label htmlFor="m1860" className="text-lg">
                 M1860. Ambulation/Locomotion
               </Label>
+              <p className="text-muted-foreground text-sm">
+                Current ability to walk safely, once in a standing position, or
+                use a wheelchair, once in a seated position, on a variety of
+                surfaces.
+              </p>
               <Select>
                 <SelectTrigger className="w-full" id="m1860">
                   <SelectValue placeholder="Select an option" />
@@ -288,16 +342,15 @@ export function PatientNotes() {
                 </SelectContent>
               </Select>
             </div>
+
+            <div className="flex w-full items-center justify-end gap-2">
+              <Button variant="outline" onClick={() => navigate(-1)}>
+                Return
+              </Button>
+              <Button>Save Assessment</Button>
+            </div>
           </div>
         </CardContent>
-        <CardFooter>
-          <div className="flex w-full items-center justify-end gap-2">
-            <Button variant="outline" onClick={() => navigate(-1)}>
-              Return
-            </Button>
-            <Button>Save Assessment</Button>
-          </div>
-        </CardFooter>
       </Card>
     </div>
   )

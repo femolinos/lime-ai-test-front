@@ -15,7 +15,7 @@ import {
 
 import { NewNoteModal } from './new-note-modal'
 
-export function PatientsList() {
+export function NotesList() {
   const navigate = useNavigate()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -23,9 +23,9 @@ export function PatientsList() {
   return (
     <div className="my-2 flex w-full max-w-4xl flex-col gap-4">
       <Card>
-        <CardContent>
+        <CardContent className="flex flex-col gap-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">Patients</h1>
+            <h1 className="text-2xl font-bold">Patient Notes</h1>
             <Button onClick={() => setIsModalOpen(true)}>New Note</Button>
           </div>
           <Table>
@@ -39,7 +39,7 @@ export function PatientsList() {
             <TableBody>
               <TableRow
                 className="hover:bg-muted/50 cursor-pointer"
-                onClick={() => navigate('/patient/1')}
+                onClick={() => navigate('/note/1')}
               >
                 <TableCell>Patient 1</TableCell>
                 <TableCell>Preview 1</TableCell>
