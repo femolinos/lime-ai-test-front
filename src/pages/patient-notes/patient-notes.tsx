@@ -211,34 +211,6 @@ export function PatientNotes() {
                 </SelectContent>
               </Select>
 
-              <Label htmlFor="m1845" className="text-lg">
-                M1845. Toileting Hygiene
-              </Label>
-              <Select>
-                <SelectTrigger className="w-full" id="m1845">
-                  <SelectValue placeholder="Select an option" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="0">
-                    0. Able to manage toileting hygiene and clothing management
-                    without assistance.
-                  </SelectItem>
-                  <SelectItem value="1">
-                    1. Able to manage toileting hygiene and clothing management
-                    without assistance if supplies/implements are laid out for
-                    the patient.
-                  </SelectItem>
-                  <SelectItem value="2">
-                    2. Someone must help the patient to maintain toileting
-                    hygiene and/or adjust clothing.
-                  </SelectItem>
-                  <SelectItem value="3">
-                    3. Patient depends entirely upon another person to maintain
-                    toileting hygiene.
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-
               <Label htmlFor="m1850" className="text-lg">
                 M1850. Transferring
               </Label>
