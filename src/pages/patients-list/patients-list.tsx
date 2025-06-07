@@ -35,7 +35,7 @@ export function PatientsList() {
         <TableBody>
           <TableRow
             className="hover:bg-muted/50 cursor-pointer"
-            onClick={() => navigate('#')}
+            onClick={() => navigate('/patient/1')}
           >
             <TableCell>Patient 1</TableCell>
             <TableCell>Preview 1</TableCell>
