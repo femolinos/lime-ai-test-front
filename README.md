@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# Healthcare Notes Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for managing patient notes and assessments in a healthcare setting. This application allows healthcare providers to create, view, and update patient notes with detailed OASIS assessments.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Patient note management
+- Audio transcription support
+- OASIS Section G assessments
+- Real-time form validation
+- Responsive design
+- Modern UI/UX
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Core Dependencies
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React 19**: Modern UI library for building user interfaces
+- **TypeScript**: For type-safe code
+- **Vite**: Next-generation frontend tooling
+- **React Router**: For client-side routing
+- **React Query**: For server state management and data fetching
+- **React Hook Form**: For form handling and validation
+- **Zod**: For schema validation
+- **Tailwind CSS**: For styling
+- **Radix UI**: For accessible UI components
+- **Moment.js**: For date formatting
+- **Axios**: For HTTP requests
+
+### Development Tools
+
+- ESLint: For code linting
+- Prettier: For code formatting
+- TypeScript: For type checking
+
+## 📋 Prerequisites
+
+- Node.js (v18 or higher)
+- A modern web browser
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd [project-directory]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies:
+```bash
+yarn
 ```
+
+3. Create .env file:
+  Create a ".env" file containing the API URL of the project's API. Use the ".env.example" file for example.
+
+4. Start the development server:
+```bash
+yarn dev
+```
+
+## 🏗️ Project Structure
+
+```
+src/
+├── api/          # API integration and services
+├── components/   # Reusable UI components
+├── lib/          # Utility functions and configurations
+├── pages/        # Page components
+├── routes.tsx    # Application routes
+└── app.tsx       # Root application component
+```
+
+## 🔑 Key Features
+
+### Form Handling
+- Uses React Hook Form for efficient form management
+- Zod schemas for validation
+
+### State Management
+- React Query for server state management
+- Optimistic updates for better UX
+- Automatic background refetching
+
+### UI Components
+- Radix UI primitives for accessible components
+- Tailwind CSS for styling
+- Responsive design patterns
