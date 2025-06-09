@@ -59,6 +59,17 @@ export function NoteDetails() {
 
   const { control, handleSubmit, reset } = useForm<UpdateNoteSchema>({
     resolver: zodResolver(updateNoteSchema),
+    defaultValues: {
+      transcription: '',
+      summary: '',
+      m1800: '',
+      m1810: '',
+      m1820: '',
+      m1830: '',
+      m1840: '',
+      m1850: '',
+      m1860: '',
+    },
   })
 
   async function handleNoteUpdate({
@@ -95,7 +106,8 @@ export function NoteDetails() {
 
   useEffect(() => {
     if (note) {
-      reset({
+      console.log('Resetting form with note data:', note)
+      const formData = {
         transcription: note.transcription,
         summary: note.summary,
         m1800: note.m1800,
@@ -105,9 +117,12 @@ export function NoteDetails() {
         m1840: note.m1840,
         m1850: note.m1850,
         m1860: note.m1860,
+      }
+      reset(formData, {
+        keepDefaultValues: false,
       })
     }
-  }, [note, reset])
+  }, [note?.id, note, reset])
 
   if (!noteId) {
     navigate('/')
@@ -218,9 +233,9 @@ export function NoteDetails() {
                   name="m1800"
                   control={control}
                   render={({ field: { name, value, onChange } }) => (
-                    <Select defaultValue={value} onValueChange={onChange}>
+                    <Select key={value} value={value} onValueChange={onChange}>
                       <SelectTrigger name={name} className="w-full">
-                        <SelectValue placeholder="Select an option" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="w-[var(--radix-select-trigger-width)]">
                         <SelectItem value="0">
@@ -256,9 +271,9 @@ export function NoteDetails() {
                   name="m1810"
                   control={control}
                   render={({ field: { name, value, onChange } }) => (
-                    <Select defaultValue={value} onValueChange={onChange}>
+                    <Select key={value} value={value} onValueChange={onChange}>
                       <SelectTrigger name={name} className="w-full">
-                        <SelectValue placeholder="Select an option" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="w-[var(--radix-select-trigger-width)]">
                         <SelectItem value="0">
@@ -295,9 +310,9 @@ export function NoteDetails() {
                   name="m1820"
                   control={control}
                   render={({ field: { name, value, onChange } }) => (
-                    <Select defaultValue={value} onValueChange={onChange}>
+                    <Select key={value} value={value} onValueChange={onChange}>
                       <SelectTrigger name={name} className="w-full">
-                        <SelectValue placeholder="Select an option" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="w-[var(--radix-select-trigger-width)]">
                         <SelectItem value="0">
@@ -333,9 +348,9 @@ export function NoteDetails() {
                   name="m1830"
                   control={control}
                   render={({ field: { name, value, onChange } }) => (
-                    <Select defaultValue={value} onValueChange={onChange}>
+                    <Select key={value} value={value} onValueChange={onChange}>
                       <SelectTrigger name={name} className="w-full">
-                        <SelectValue placeholder="Select an option" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="w-[var(--radix-select-trigger-width)]">
                         <SelectItem value="0">
@@ -390,9 +405,9 @@ export function NoteDetails() {
                   name="m1840"
                   control={control}
                   render={({ field: { name, value, onChange } }) => (
-                    <Select defaultValue={value} onValueChange={onChange}>
+                    <Select key={value} value={value} onValueChange={onChange}>
                       <SelectTrigger name={name} className="w-full">
-                        <SelectValue placeholder="Select an option" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="w-[var(--radix-select-trigger-width)]">
                         <SelectItem value="0">
@@ -432,9 +447,9 @@ export function NoteDetails() {
                   name="m1850"
                   control={control}
                   render={({ field: { name, value, onChange } }) => (
-                    <Select defaultValue={value} onValueChange={onChange}>
+                    <Select key={value} value={value} onValueChange={onChange}>
                       <SelectTrigger name={name} className="w-full">
-                        <SelectValue placeholder="Select an option" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="w-[var(--radix-select-trigger-width)]">
                         <SelectItem value="0">
@@ -477,9 +492,9 @@ export function NoteDetails() {
                   name="m1860"
                   control={control}
                   render={({ field: { name, value, onChange } }) => (
-                    <Select defaultValue={value} onValueChange={onChange}>
+                    <Select key={value} value={value} onValueChange={onChange}>
                       <SelectTrigger name={name} className="w-full">
-                        <SelectValue placeholder="Select an option" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="w-[var(--radix-select-trigger-width)]">
                         <SelectItem value="0">
